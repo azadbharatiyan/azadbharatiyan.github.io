@@ -3,132 +3,427 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downloads</title>
+    <title>Fourline Downloader</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     <style>
-        .goldman-regular {
-        font-family: "Goldman", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        }
-        .goldman-bold {
-        font-family: "Goldman", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-        }
-        *{
-            box-sizing: border-box;
-            font-family: goldman;
-        }
-        body{width:300px ;
-            background-image: linear-gradient( 109.6deg,  rgba(34,211,238,1) 11.2%, rgba(79,57,246,1) 100.2% );
-        }
-        ::-webkit-scrollbar{
-            display: none;
-        }
-        .content{
-            position: absolute;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: 850px;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    .josefin-sans-<uniquifier> {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    }
+    *{
+        box-sizing: border-box;
+        font-family: josefin sans;
+        color: aliceblue;
+    }
+    body{
+        background-color: black;
+    }
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    .container{
+        position: absolute;
+        left: 22%;
+        right: 0;
+        width: 85%;
+        height: 1500px;;
+        border: 1px solid orange;
+        margin: auto;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        visibility: hidden;
+        transition: all 0.5s linear;
+        z-index: 01;
+   }
+    .list-one{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .list-two{
+        position: absolute;
+        top: 0;
+        left: 35%;
+    }
+    .list-three{
+        position: absolute;
+        top: 0;
+        left: 70%;
+    }
+    .heading{
+        font-size: 25px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 80%;
+        text-align: center;
+    }
+    .heading::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: -20px;
+        background-color: orange;
+        border-radius: 50px;
+        width: 40%;
+        height: 5px;
+    }
+    .content-one{
+        position: absolute;
+        width: 430px;
+        height: 150px;
+        left: 20px;
+        top: 20px;
+        background-color: aliceblue;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        transition: all 0.5s linear;
 
-            h4{
-                color: aliceblue;
-                position: absolute;
-                top: 0;
-                font-size: 35px;
+        img{
+            height: 120px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            left: 20px;
+            border-radius: 10px;
+        }
+        .tet{
+            position: absolute;
+            left: 180px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+            h5{
+                color: black;
+                font-size: 25px;
+
             }
-            h4::after{
+            a{
                 position: absolute;
-                content: "";
-                width: 300px;
-                height: 5px;
-                border-radius: 50px;
-                background-color: aliceblue;
-                bottom: -10px;
-                right: 0;
+                bottom: 10px;
+                text-align: center;
+                background-color: orange;
+                color: black;
+                height: 35PX;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                left: 0;
-                margin: auto;
-            }
-            ul{
-                position:relative;
-                left: 0;
-                right: 0;
-                top: 120px;
-                margin: auto;
-                list-style: none;
-            }
-            li{
-                flex-direction: row;
-                margin-bottom: 15px;
-                background-color: aliceblue;
                 width: 200px;
-                padding: 15px;
+                border-radius: 10px;
                 text-decoration: none;
-                border-radius: 1px;
-                box-shadow: 1px 1px 15px aliceblue;
-                transition: all 0.6s linear;
-                text-align: center;
+                z-index: 1;
+                transition: all 0.5s linear;
+            }
+            a::after{
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0; 
+                border-radius: 10px;     
+                background-color: rgb(66, 4, 236);
+                width: 0%;
+                height: 100%;
+                transition: all 0.5s linear;
+                z-index: -1;
+            }
+            a:hover::after{
+                width: 100%;
+                box-shadow: 1px 1px 15px rgb(66, 4, 236);
+            }
+            a:hover{
+                color: aliceblue;
                 
             }
-            a{
-                text-decoration: none;
-                color: #0E0E10;
 
-            }
         }
+    }
+    .content-one:hover{
+        transform: translateY(-5px);
+        box-shadow: 1px 1px 15px aliceblue;
+    }
+    .content-one:nth-child(2){
+        margin-top: 180px;
+    }
+    .content-one:nth-child(3){
+        margin-top: 360px;
+    }
+    .content-one:nth-child(4){
+        margin-top: 540px;
+    }
+    .content-one:nth-child(5){
+        margin-top: 720px;
+    }
+    .content-one:nth-child(6){
+        margin-top: 900px;
+    }
+    .content-one:nth-child(7){
+        margin-top: 1080px;
+    }
+    .content-one:nth-child(8){
+        margin-top: 1260px;
+    }
+    .genr{
+        position: absolute;
+        top: 10px;
+        list-style-type: none;
+        width: 100%;
+        display: flex;
+        left: 0;
+        justify-content: start;
+        height: 1500px;
+
+        ul{
+            list-style: none;
+            position: absolute;
+            top: 120px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            height: 100px;
+            width: 100%;
+            left: -150px;
+        }
+        li{
+            margin-bottom: 50px;
+            border: 1px solid orange;
+            text-align: center;
+            padding: 20px;
+            width: 150px;
+            margin-left: 10%;
+            transition: all 0.5s linear;
+            
+        }
+        li:hover{
+            background-color: orange;
+            width: 200px;
+            
+        }
+        li:hover .container{
+            visibility: visible;
+            transition: all 0.5s linear;
+        }
+    }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h4>Personal Downloads</h4>
+    <h4 class="heading">
+        FourLine Downloader
+    </h4>
+    <div class="genr">
         <ul>
-            <li><a target="_blank" href="">Gigabyte Driver</a></li>
-            <li><a target="_blank" href="https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-6000-series/amd-radeon-rx-6750-xt.html">AMD Driver</a></li>
-            <li><a target="_blank" href="https://drivers.amd.com/drivers/installer/25.20/whql/amd-software-adrenalin-edition-25.10.2-minimalsetup-251027_web.exe">AMD driver Common</a></li>
-            <li><a target="_blank" href="https://www.amd.com/EN/resources/support-articles/release-notes/RN-RAD-WIN-25-10-2.html">AMD 25.10.2 OCT</a></li>
-            <li><a target="_blank" href="">AMD PRO Driver</a></li>
-            <li><a target="_blank" href="https://ninite.com/">Nanite</a></li>
-            <li><a target="_blank" href="https://ulaa.com/">Ulaa Browser</a></li>
-            <li><a target="_blank" href="https://downloads.zohocdn.com/zmail-desktop/windows/zoho-mail-desktop-lite-installer-x64-v1.7.1.exe">Zoho Mail</a></li>
-            <li><a target="_blank" href="https://sourceforge.net/projects/crystaldiskinfo/files/9.7.2/CrystalDiskInfo9_7_2.exe/download">Crystal Disk</a></li>
-            <li><a target="_blank" href="https://cdn-fastly.obsproject.com/downloads/OBS-Studio-32.0.2-Windows-x64-Installer.exe">OBS Studio</a></li>
-            <li><a target="_blank" href="https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user">VS Code</a></li>
-            <li><a target="_blank" href="https://www.asrock.com/Graphics-Card/AMD/Radeon%20RX%206750%20XT%20Challenger%20Pro%2012GB%20OC/#Download">ASROCK Tweak</a></li>
-            <li><a target="_blank" href="https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi">Epic Games</a></li>
-            <li><a target="_blank" href="https://workdrive.zoho.in/file/k2mlbaa629ac1ac77427ea220ac497d6cbd8a">DNS Changer</a></li>
-            <li><a target="_blank" href="https://download.msi.com/uti_exe/vga/MSIAfterburnerSetup.zip?__token__=exp=1763090976~acl=/*~hmac=8b0b8895efb72bb751953dcec19d652e5821360420be9fa8221097ef8873bd44">MSI Afterburner</a></li>
-            <li><a target="_blank" href="https://www.crucial.in/content/dam/crucial/support/storage-executive-win-64.zip">Crucial SSD</a></li>
-            <li><a target="_blank" href="https://antesports.com/wp-content/themes/storefront/software/Ant-Esports-GM600.exe?x74201">ANT E-Sports Driver</a></li>
-            <li><a target="_blank" href="https://www.lg.com/us/support/product/lg-24GN650-B.AUS?tab=1">LG Driver</a></li>
-            <li><a target="_blank" href="https://streamlabs.com/streamlabs-desktop/download?sdb=0">Streamlabs</a></li>
-            <li><a target="_blank" href="https://downloads.zohocdn.com/arattai-desktop/windows/Arattai_1.0.7_x64.exe">Arattai</a></li>
-            <li><a target="_blank" href="https://get.microsoft.com/installer/download/9NKSQGP7F2NH?cid=website_cta_psi">Whatsapp</a></li>
-            <li><a target="_blank" href="https://telegram.org/dl/desktop/win64">Telegram</a></li>
-            <li><a target="_blank" href="https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-windows-x86-64.exe">Local Send</a></li>
-            <li><a target="_blank" href="https://www.canva.com/download/windows/canva-desktop/">Canva Editor</a></li>
-            <li><a target="_blank" href="https://home.zoho.in/home">Zoho Home</a></li>
-            <li><a target="_blank" href="https://workdrive.zoho.in/folder/k2mlb376dd0a7d0fd4435b51365d08821ce2c">ARK Fix</a></li>
-            <li><a target="_blank" href="https://workdrive.zoho.in/file/k2mlbf70f75cc2e174af7815bb73add2f9ae9">Traffic Monitor</a></li>
-            <li><a target="_blank" href="https://workdrive.zoho.in/file/k2mlb2a5afa2c979c4be7b88438e391acad13"> Windows Active</a></li>
-            <li><a target="_blank" href="https://www.zoho.com/workdrive/truesync.html">Zoho TrueSYNC</a></li>
-            <li><a target="_blank" href="https://apps.microsoft.com/detail/9nt1r1c2hh7j?hl=en-us&gl=US">Chat GPT</a></li>
-            <li><a target="_blank" href="https://download.microsoft.com/download/6c1eeb25-cf8b-41d9-8d0d-cc1dbc032140/officedeploymenttool_19029-20278.exe">Microsoft Office</a></li>
-            <li><a target="_blank" href="https://config.office.com/deploymentsettings">Office Config</a></li>
-            <li><a target="_blank" href="https://download.gigabyte.com/FileList/Utility/GCC_25.08.04.01.zip">Gigabyte Centre</a></li>
+            <li>
+                Launcher
 
-            <li><a target="_blank" href="https://www.bluestacks.com/download.html">Bluestacks</a></li>
+                <div class="container" ></div>
+            </li>
+            <li>
+                Downloads
+
+                <div class="container">
+       <div class="list-one">
+         <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/AMD-logo.png" alt="">
+           <span class="tet">
+             <h5>AMD Driver</h5>
+            <a href="https://drivers.amd.com/drivers/installer/25.20/whql/amd-software-adrenalin-edition-25.10.2-minimalsetup-251027_web.exe" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/amdradeon-logo.png" alt="">
+           <span class="tet">
+             <h5>Radeon Driver</h5>
+            <a href="" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/amdradeon-logo.png" alt="">
+           <span class="tet">
+             <h5>Radeon Driver</h5>
+            <a href="" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+       </div>
+
+       <div class="list-two">
+         <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/AMD-logo.png" alt="">
+           <span class="tet">
+             <h5>AMD Driver</h5>
+            <a href="https://drivers.amd.com/drivers/installer/25.20/whql/amd-software-adrenalin-edition-25.10.2-minimalsetup-251027_web.exe" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/amdradeon-logo.png" alt="">
+           <span class="tet">
+             <h5>Radeon Driver</h5>
+            <a href="" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/amdradeon-logo.png" alt="">
+           <span class="tet">
+             <h5>Radeon Driver</h5>
+            <a href="" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+       </div>
+        
+       <div class="list-three">
+         <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/AMD-logo.png" alt="">
+           <span class="tet">
+             <h5>AMD Driver</h5>
+            <a href="https://drivers.amd.com/drivers/installer/25.20/whql/amd-software-adrenalin-edition-25.10.2-minimalsetup-251027_web.exe" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/amdradeon-logo.png" alt="">
+           <span class="tet">
+             <h5>Radeon Driver</h5>
+            <a href="" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/amdradeon-logo.png" alt="">
+           <span class="tet">
+             <h5>Radeon Driver</h5>
+            <a href="" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+        <div class="content-one">
+            <img src="images/gigabyte-logo.png" alt="">
+           <span class="tet">
+             <h5>GIGABYTE Driver</h5>
+            <a href="http://" target="_blank" rel="noopener noreferrer">DOWNLOAD</a>
+           </span>
+        </div>
+       </div>
+        
+    </div>
+            </li>
+            <li>
+               Contact 
+               <div class="container" ></div>
+            </li>
+            <li>
+                FAQ
+                <div class="container" ></div>
+            </li>
+
         </ul>
     </div>
+    
 </body>
 </html>
